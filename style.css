@@ -1,0 +1,126 @@
+/* À insérer entre les balises <style> de ton document */
+
+@import url('https://fonts.googleapis.com');
+
+:root {
+    --primary: #1e3a8a;
+    --accent: #3b82f6;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+/* Effet de flou sur la navigation (Glassmorphism) */
+.glass {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    transition: all 0.3s ease;
+}
+
+/* Dégradé Hero ultra-moderne */
+.hero-gradient {
+    background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #60a5fa 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Animation d'entrée pour les cartes de programmes */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#programmes .grid > div {
+    animation: fadeInUp 0.6s ease forwards;
+    opacity: 0;
+}
+
+#programmes .grid > div:nth-child(1) { animation-delay: 0.1s; }
+#programmes .grid > div:nth-child(2) { animation-delay: 0.2s; }
+#programmes .grid > div:nth-child(3) { animation-delay: 0.3s; }
+
+/* Styles personnalisés pour les champs de formulaire */
+input:focus, select:focus, textarea:focus {
+    border-color: var(--accent) !important;
+    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1) !important;
+    transition: all 0.2s ease;
+}
+
+/* Boutons avec effet de profondeur */
+button, .btn-primary {
+    transition: transform 0.2s active, box-shadow 0.2s;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+/* Custom Scrollbar pour un look pro */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #1e3a8a;
+}
+
+/* Effet de lueur sur l'image Hero */
+.hero-img-container::after {
+    content: '';
+    position: absolute;
+    top: -10%;
+    right: -10%;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(59,130,246,0.2) 0%, transparent 70%);
+    z-index: -1;
+}
+/* Animation spécifique pour les témoignages */
+#temoignages img {
+    transition: transform 0.5s ease;
+}
+
+#temoignages .bg-white:hover img {
+    transform: scale(1.05) rotate(-3deg);
+}
+
+#temoignages .bg-white {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+/* Ajoute ces styles pour affiner le look */
+#galerie .rounded-\[2rem\] {
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+/* Effet de lueur douce au survol des images */
+#galerie .group:hover {
+    box-shadow: 0 20px 40px -15px rgba(59, 130, 246, 0.25);
+    z-index: 10;
+}
+
+/* Transition de sortie douce pour que l'image revienne en place */
+#galerie img {
+    transition: transform 0.8s cubic-bezier(0.2, 1, 0.3, 1), filter 0.5s ease;
+}
+#acceuil button{
+    border-radius: 50%;
+}
